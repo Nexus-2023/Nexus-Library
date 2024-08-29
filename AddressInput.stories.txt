@@ -1,0 +1,24 @@
+import { Meta, StoryObj } from "@storybook/react"
+import { CenterDecorator } from "./Decorators/Center"
+import AddressInput from "nexus-token-input-field/dist/index"
+// Metadata for the story
+const meta: Meta<typeof AddressInput> = {
+  title: "Nexus Library/AddressInput ",
+  component: AddressInput,
+  tags: ["autodocs"],
+  decorators: [CenterDecorator],
+  argTypes: {
+    label: {
+      control: "text",
+    },
+  },
+}
+
+export default meta
+type Story = StoryObj<typeof AddressInput>
+
+export const Default: Story = {
+  args: {
+    label: "Berachain Address",
+  },
+}

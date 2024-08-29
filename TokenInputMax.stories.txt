@@ -1,0 +1,42 @@
+import { Meta, StoryObj } from "@storybook/react"
+import TokenInputMax from "nexus-token-input"
+import { CenterDecorator } from "./Decorators/Center"
+
+// Metadata for the story
+const meta: Meta<typeof TokenInputMax> = {
+  title: "Nexus Library/TokenInputMax",
+  component: TokenInputMax,
+  tags: ["autodocs"],
+  decorators: [CenterDecorator],
+  argTypes: {
+    TokenSelecterProps: {},
+    TokenAmount: { control: "number" },
+    handleToken: { action: "handleTokenChange" },
+    handleMaxClick: { action: "handleMaxClick" },
+  },
+}
+
+// {
+//   balance: "0",
+//   name: "Ether",
+//   symbol: "ETH",
+//   logo: ethIcon,
+//   native: true,
+//   tokenAddress: "",
+// },
+export default meta
+type Story = StoryObj<typeof TokenInputMax>
+
+export const Default: Story = {
+  args: {
+    TokenAmount: 0,
+    // TokenSelecterProps: {
+    //   balance: "0",
+    //   name: "Ether",
+    //   symbol: "ETH",
+    //   logo: ethIcon,
+    //   native: true,
+    //   tokenAddress: "",
+    // },
+  },
+}
